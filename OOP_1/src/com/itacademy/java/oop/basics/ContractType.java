@@ -7,8 +7,9 @@ public enum ContractType {
     public final String contractType;
 
     ContractType(String contractType) {
-        this.contractType = contractType;
+            this.contractType = contractType;
     }
+
 
 
 

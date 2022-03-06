@@ -11,7 +11,30 @@ public class Employee {
     private String position;
 
     public Employee() {
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setContractType(ContractType contractType) {
+        this.contractType = contractType;
+    }
+
+    public void setContractStartDate(LocalDate contractStartDate) {
+        this.contractStartDate = contractStartDate;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public Employee(String name, String surname, ContractType contractType, LocalDate contractStartDate, double salary, String position) {

@@ -11,6 +11,22 @@ public class Loan {
     public Loan() {
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setAmount(long amount) {
+        this.amount = amount;
+    }
+
+    public void setLoanType(LoanType loanType) {
+        this.loanType = loanType;
+    }
+
+    public void setTerminationDate(LocalDate terminationDate) {
+        this.terminationDate = terminationDate;
+    }
+
     public Loan(int id, long amount, LoanType loanType, LocalDate terminationDate) {
         this.id = id;
         this.amount = amount;

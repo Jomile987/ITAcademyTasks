@@ -25,6 +25,22 @@ public class Customer {
         return customerLoans;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setPersonalNumber(long personalNumber) {
+        this.personalNumber = personalNumber;
+    }
+
     public void setCustomerLoans(Loan[] customerLoans) {
         this.customerLoans = customerLoans;
     }
