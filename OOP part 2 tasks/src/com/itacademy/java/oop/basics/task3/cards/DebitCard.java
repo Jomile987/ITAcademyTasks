@@ -1,7 +1,9 @@
-package com.itacademy.java.oop.basics.task3;
+package com.itacademy.java.oop.basics.task3.cards;
 
-public class DebitCard extends Card{
-    private double interest;
+import com.itacademy.java.oop.basics.task3.exceptions.NotEnoughBalanceException;
+
+public class DebitCard extends Card {
+    private static double interest;
     private double debit; // how much money client is withdrawing.
 
     public DebitCard(double interest, double debit) {
@@ -17,8 +19,15 @@ public class DebitCard extends Card{
         return debit;
     }
 
-    @Override
-    public void debit(double amount) {
-        super.debit(amount);
+    public static void debit(double amount) {
+        if (totalWithdrawAmount(amount) < balance) {
+            balance -= totalWithdrawAmount(amount);
+            System.out.println(balance);
+        } else {
+            throw new NotEnoughBalanceException();
+        }
+    }
+    public static double totalWithdrawAmount(double amount) {
+        return amount + (amount * interest / 100);
     }
 }

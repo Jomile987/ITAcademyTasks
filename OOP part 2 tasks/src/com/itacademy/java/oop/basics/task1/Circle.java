@@ -1,8 +1,7 @@
 package com.itacademy.java.oop.basics.task1;
 
 public class Circle extends Shape {
-    private double radius;
-    private double pi = 3.14;
+    private final double radius;
 
     public Circle(double radius) {
         this.radius = radius;
@@ -11,12 +10,12 @@ public class Circle extends Shape {
 
     @Override
     public double calculateArea() {
-        return pi * Math.pow(radius, 2);
+        return Math.PI * Math.pow(radius, 2);
     }
 
     @Override
     public double calculatePerimeter() {
-        return 2 * pi * radius;
+        return 2 * Math.PI * radius;
     }
 
     @Override

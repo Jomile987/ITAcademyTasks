@@ -1,7 +1,7 @@
 package com.itacademy.java.oop.basics.task1;
 
 public class Square extends Shape {
-    private double side;
+    private final double side;
 
     public Square(double side) {
         this.side = side;

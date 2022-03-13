@@ -1,5 +1,8 @@
 package com.itacademy.java.oop.basics.task3;
 
+import com.itacademy.java.oop.basics.task3.cards.Card;
+import com.itacademy.java.oop.basics.task3.exceptions.InsuficientAtmFundsException;
+
 public class MyBankAtm implements Atm {
     private double balance;
 
@@ -8,28 +11,22 @@ public class MyBankAtm implements Atm {
     }
 
     @Override
-    public void withdrawCredit(CreditCard card, double withdrawAmount) {
-        withdrawAmount += (withdrawAmount * card.getInterest() / 100);
-        if (this.balance - withdrawAmount < 0) {
-            throw new InsuficientAtmFundsException();
+    public void withdrawCredit(double withdrawAmount) {
+        if (withdrawAmount < balance) {
+            Card.credit(withdrawAmount);
+            balance -= withdrawAmount;
         } else {
-            if (withdrawAmount <= card.balance) {
-                this.balance -= withdrawAmount;
-                card.balance -= withdrawAmount;
-            }else{
-                throw new InsuficientAccountBalance();
-            }
-
+            throw new InsuficientAtmFundsException();
         }
     }
 
     @Override
-    public void withdrawDebit(DebitCard card) {
-        double amount;
-        amount = card.getDebit() + (card.getDebit() * card.getInterest() / 100);
-        if (amount > this.balance) {
+    public void withdrawDebit(double withdrawAmount) {
+        if (withdrawAmount < balance) {
+            Card.debit(withdrawAmount);
+            balance -= withdrawAmount;
+        } else {
             throw new InsuficientAtmFundsException();
         }
-
     }
 }
