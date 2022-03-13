@@ -6,9 +6,6 @@ public class Square {
     private double length;
     private double width;
 
-    public Square() {
-    }
-
     public Square(double length, double width) {
         this.length = length;
         this.width = width;
