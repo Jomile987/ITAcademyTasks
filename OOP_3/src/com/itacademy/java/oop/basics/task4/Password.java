@@ -1,13 +1,13 @@
 package com.itacademy.java.oop.basics.task4;
 
 public class Password {
-    private String password;
+    private final String password;
 
     public Password(String password) {
         this.password = password;
     }
 
-    public void Validation() {
+    public void validation() {
         char[] ch;
         ch = password.toCharArray();
         if (password.length() >= 10) {
