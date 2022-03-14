@@ -1,19 +1,18 @@
 package com.itacademy.java.oop.basics.task3.cards;
 
-import com.itacademy.java.oop.basics.task3.exceptions.NotEnoughBalanceException;
-import com.itacademy.java.oop.basics.task3.exceptions.NotEnoughtCreditException;
-
 public abstract class Card {
-    public static double balance = 1000;
-    String cardHolderName = "Tom";
-    String cardNumber = "bla_bla";
+    double balance;
+    String cardHolderName;
+    String cardNumber;
 
-    public static void credit(double amount) {
-
+    public Card(double balance, String cardHolderName, String cardNumber) {
+        this.balance = balance;
+        this.cardHolderName = cardHolderName;
+        this.cardNumber = cardNumber;
     }
 
-    public static void debit(double amount) {
+    public abstract void credit(double amount);
 
-    }
+    public abstract void debit(double amount);
 
 }

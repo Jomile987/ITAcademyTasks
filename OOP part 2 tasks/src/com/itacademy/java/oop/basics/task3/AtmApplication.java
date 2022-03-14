@@ -1,17 +1,17 @@
 package com.itacademy.java.oop.basics.task3;
 
+import com.itacademy.java.oop.basics.task3.cards.Card;
 import com.itacademy.java.oop.basics.task3.cards.CreditCard;
 import com.itacademy.java.oop.basics.task3.cards.DebitCard;
 
 public class AtmApplication {
     public static void main(String[] args) {
-        CreditCard creditCard = new CreditCard(1.5, -100);
-        DebitCard debitCard = new DebitCard(-1.5, 0);
+        Card creditCard = new CreditCard(1.5, -100,100,"Tom","8654889");
+        Card debitCard = new DebitCard(-1.5, 0,100,"Tom","8654889");
 
-        MyBankAtm bank = new MyBankAtm(10000);
+        MyBankAtm bank = new MyBankAtm(100000);
 
-
-        bank.withdrawCredit(1000);
+        bank.withdrawCredit(creditCard,10);
 
     }
 }
