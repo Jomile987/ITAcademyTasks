@@ -1,0 +1,11 @@
+li{
+    color: rgb(37, 80, 223);
+    text-decoration: underline;
+}
+li:hover{
+    cursor: pointer;
+}
+
+li:active {
+    color: rgb(118, 37, 223);
+  }
